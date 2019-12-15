@@ -1,0 +1,32 @@
+<div class="table-responsive-md">
+<mat-toolbar class="bg-primary text-white">   
+  <mat-toolbar-row>
+    <span>List of  cars </span>
+  </mat-toolbar-row>
+  </mat-toolbar>
+<table class="table table-hover" width="50%" height="40%">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Model</th>
+        <th scope="col">Image</th>
+        <th scope="col">    </th>
+      </tr>
+    </thead>
+    <tbody>
+<tr *ngFor="let car of cars">
+        <th scope="row">{{car.idCar}}</th>
+        <td>{{car.modele}}</td>
+        <td>{{car.name}}</td>
+        <td><img  class="rounded"  src="{{car.photo}}" width="20%" height="20%" class="rounded-circle"></td>
+     <td> <a mat-button [routerLink]="['/car-mod',car.idCar]">{{car.name}}</a> </td>
+      </tr>
+      <tr>
+
+
+      </tr>
+    </tbody>
+      </table>
+      <button class="btn btn-primary" [routerLink]="['/modif']"> Add New Car </button>
+    </div>
